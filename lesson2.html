@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lesson 1</title>
+    <title>Lesson 2</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="task">
+        var a = 1, b = 1, c, d;
+        <ol>
+            <li>c = ++a; alert(c);           // 2 <br><span class="ans">сли инкремент перед переменной то сначало увеличит а потом выведет</span></li>
+            <li>d = b++; alert(d);           // 1 <br><span class="ans">если декремент перед переменной то сначало выведет а потом увеличит</span></li>
+            <li>c = (2+ ++a); alert(c);      // 5 <br><span class="ans">а в коде уже увеличилась на еденичку выше (2 + 3)</span></li>
+            <li>d = (2+ b++); alert(d);      // 4 <br><span class="ans">b выше увеличелось но здесь увеличется после операции</span></li>
+            <li>alert(a);                    // 3  <br><span class="ans">в первом и третьем строке увеличилосо по единице</span></li>
+            <li>alert(b);                    // 3 <br><span class="ans">во 2-ом и 4-ом строке увеличилосо по единице</span></li>
+        </ol>
+    </div>
+    <div class="task">
+        var a = 2;<br>
+        var x = 1 + (a *= 2);<br>
+        <span class="ans">x = 5</span>
+
+    </div>
+    <div class="task">
+        <a href="#" onclick="task3()">Get 2 variable</a>
+        <div class="resTask3" id="resTask3"></div>
+
+    </div>
+    <div class="task">
+        <a href="#" onclick="task4()">Введите число от 1 до 15</a>
+        <div class="resTask4" id="resTask4"></div>
+
+    </div>
+    <div class="task">
+        <a href="#" onclick="task5()">Введите число от 1 до 15</a>
+        <div class="resTask4" id="resTask5"></div>
+
+    </div>
+    <div class="task">
+        <div class="game">
+            <div class="rule">
+                <p>Выберите один из предметов</p>
+            </div>
+            <div class="optionUser">
+                <img src="img/stone.png" onclick="game(1)" alt="Камень">
+                <img src="img/scissors.png" onclick="game(2)" alt="Ножницы">
+                <img src="img/paper.png" onclick="game(3)" alt="Бумага">
+            </div>
+            <div class="result" id="resultGame"></div>
+        </div>
+    </div>
     <script src="js/lesson2.js" type="text/javascript"></script>
 </body>
 </html>

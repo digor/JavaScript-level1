@@ -1,0 +1,1 @@
+.task{margin-bottom:30px}.game{border:1px solid red;padding:30px;display:flex;flex-direction:column;align-items:center;margin:0 auto;width:400px;height:180px}.game .rule{width:200px}.game .optionUser{display:flex;justify-content:space-between;width:100%}.game .optionUser img{width:100px}.game .optionUser img:hover{cursor:pointer}.game .result{text-align:center}
