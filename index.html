@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Практическое задание</h1>
+    </header>
+    <div class="task">
+        <ol>
+            <li>Почему код дает именно такие результаты?</li>
+        </ol>
+        var a = 1, b = 1, c, d;
+        <ol class="ol_task1">
+            <li>c = ++a; alert(c); // 2 <br><span class="ans">сли инкремент перед переменной то сначало увеличит а потом выведет</span>
+            </li>
+            <li>d = b++; alert(d); // 1 <br><span class="ans">если декремент перед переменной то сначало выведет а потом увеличит</span>
+            </li>
+            <li>c = (2+ ++a); alert(c); // 5 <br><span
+                    class="ans">а в коде уже увеличилась на еденичку выше (2 + 3)</span></li>
+            <li>d = (2+ b++); alert(d); // 4 <br><span
+                    class="ans">b выше увеличелось но здесь увеличется после операции</span></li>
+            <li>alert(a); // 3 <br><span class="ans">в первом и третьем строке увеличилосо по единице</span></li>
+            <li>alert(b); // 3 <br><span class="ans">во 2-ом и 4-ом строке увеличилосо по единице</span></li>
+        </ol>
+    </div>
+    <div class="task">
+        <ol start="2">
+            <li>Чему будет равен x?</li>
+        </ol>
+        var a = 2;<br>
+        var x = 1 + (a *= 2);<br>
+        <span class="ans">x = 5</span>
+
+    </div>
+    <div class="task">
+        <ol start="3">
+            <li>
+                Объявить две целочисленные переменные — a и b и задать им произвольные начальные значения. Затем
+                написать скрипт, который работает по следующему принципу:
+                <ul>
+                    <li>если a и b положительные, вывести их разность;</li>
+                    <li>если а и b отрицательные, вывести их произведение;</li>
+                    <li>если а и b разных знаков, вывести их сумму;</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="answers">
+            <form action="#">
+                A: <input id="a" type="number" size="6" placeholder="5">
+                B: <input id="b" type="number" size="6" placeholder="-6">
+                <a href="#" class="buttonJS" onclick="task3()">SEND</a>
+            </form>
+            <div class="resTask3"><span class="ans ansBig" id="resTask3"></span></div>
+        </div>
+    </div>
+    <div class="task">
+        <ol start="4">
+            <li>
+                Присвоить переменной <strong>а</strong> значение в промежутке [0..15]. С помощью оператора switch
+                организовать вывод
+                чисел от <strong>a</strong> до <strong>15</strong>
+            </li>
+        </ol>
+        <div class="answers">
+            <form action="#">
+                A: <input id="t4" type="number" size="6" placeholder="От 0 до 15">
+                <a href="#" class="buttonJS" onclick="task4()">SEND</a>
+            </form>
+            <div class="resTask4"><span class="ans" id="resTask4"></span></div>
+        </div>
+    </div>
+    <div class="task">
+        <ol start="5">
+            <li>
+                Реализовать четыре основные арифметические операции в виде функций с двумя параметрами. Обязательно
+                использовать оператор <strong>return</strong>.
+            </li>
+        </ol>
+        <div class="answers">
+            <form action="#" class="calcForm">
+                <div class="inputs">
+                    <input id="a_t5" type="number" size="6" placeholder="a">
+                    <input id="b_t5" type="number" size="6" placeholder="b">
+                </div>
+                <div class="buttons">
+                    <a href="#" class="buttonJS"
+                       onclick="addition(parseInt(document.getElementById('a_t5').value),parseInt(document.getElementById('b_t5').value))">+</a>
+                    <a href="#" class="buttonJS"
+                       onclick="minus(parseInt(document.getElementById('a_t5').value),parseInt(document.getElementById('b_t5').value))">-</a>
+                    <a href="#" class="buttonJS"
+                       onclick="multipl(parseInt(document.getElementById('a_t5').value),parseInt(document.getElementById('b_t5').value))">*</a>
+                    <a href="#" class="buttonJS"
+                       onclick="division(parseInt(document.getElementById('a_t5').value),parseInt(document.getElementById('b_t5').value))">/</a>
+                </div>
+            </form>
+            <div class="resTask4"><span class="ans ansBig" id="resTask5"></span></div>
+        </div>
+    </div>
+    <div class="task">
+        <ol start="6">
+            <li>
+                Реализовать функцию с тремя параметрами: <strong>function mathOperation(arg1, arg2, operation)</strong>,
+                где <strong>arg1</strong>,
+                <strong>arg2</strong> — значения аргументов, operation — строка с названием операции. В зависимости от
+                переданного
+                значения выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть
+                полученное значение (применить <strong>switch</strong>).
+            </li>
+        </ol>
+        <div class="answers">
+            <form action="#" class="calcForm">
+                <div class="inputs">
+                    <input id="a_t6" type="number" size="6" placeholder="a">
+                    <select name="operation" id="operation_t6">
+                        <option value="1">Сложение</option>
+                        <option value="2">Вычитание</option>
+                        <option value="3">Умножение</option>
+                        <option value="4">Деление</option>
+                    </select>
+                    <input id="b_t6" type="text" size="6" placeholder="b">
+                </div>
+                <a href="#" class="buttonJS"
+                   onclick="mathOperation(parseInt(document.getElementById('a_t6').value),parseInt(document.getElementById('b_t6').value),parseInt(document.getElementById('operation_t6').value))">Выполнить</a>
+            </form>
+            <div class="resTask4"><span class="ans ansBig" id="resTask6"></span></div>
+        </div>
+    </div>
+    <div class="task">
+        <ol start="7">
+            <li>
+                Сравнить <strong>null</strong> и <strong>0</strong>. Объяснить результат.
+            </li>
+        </ol>
+        <span class="ans"><mark>NULL</mark> - это задается чтобы очистить переменную а <mark>0</mark> - это число. Они не сравниваются.</span>
+    </div>
+    <div class="task">
+        <ol start="8">
+            <li>
+                С помощью рекурсии организовать функцию возведения числа в степень. Формат: <strong>function power(val,
+                pow)</strong>, где val — заданное число, <strong>pow</strong> –— степень.
+            </li>
+        </ol>
+        <div class="answers">
+            <form action="#" class="calcForm8">
+                <input id="val" class="val_t8" type="number" size="6" placeholder="val">
+                <input id="pow" class="pow_t8" type="number" size="6" placeholder="pow">
+                <a href="#" class="buttonJS"
+                   onclick="power(parseInt(document.getElementById('val').value),parseInt(document.getElementById('pow').value))">Выполнить</a>
+            </form>
+            <div class="resTask4">Результат: <span class="ans ansBig" id="resTask8"></span></div>
+        </div>
+    </div>
+    <div class="task">
+        <h2>Игра Камень-Ножницы-Бумага</h2>
+        <div class="game">
+            <div class="selectItem">
+                <div class="rule">
+                    <p>Выберите один из предметов</p>
+                </div>
+                <div class="optionUser">
+                    <img src="img/stone.png" onclick="game(1)" alt="Камень">
+                    <img src="img/scissors.png" onclick="game(2)" alt="Ножницы">
+                    <img src="img/paper.png" onclick="game(3)" alt="Бумага">
+                </div>
+            </div>
+            <div class="result gameResult" id="resultGame"></div>
+        </div>
+    </div>
+    <script src="js/lesson2.js" type="text/javascript"></script>
+</div>
+</body>
+</html>
