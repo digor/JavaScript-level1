@@ -1,3 +1,9 @@
+function task1() {
+    var a = true;
+    while (a) {
+
+    }
+}
 function task4() {
     for (var i = 0; i <= 9; i++){
         console.log (i);
