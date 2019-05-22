@@ -61,6 +61,7 @@ function task4() {
                 x = x + ' 14';
             case 15:
                 x = x + ' 15';
+                break;
         }
         document.getElementById("resTask4").innerHTML = "вывод чисел от " + a + " до 15: " + x;
     } else {
