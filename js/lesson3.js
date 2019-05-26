@@ -12,6 +12,7 @@ function task1() {
             } else {
                 prNr = true;
             }
+           // (nr % i) === 0 ? break : prNr = true;
         }
         if (prNr){
             arr.push(nr);
@@ -24,9 +25,12 @@ function task4() {
     for (var i = 0; i <= 9; console.log (i++)){}
 }
 function task5() {
-    var piramid ;
-    for (var i = 1; i <= 20; i++){
-        piramid +='x';
+    var piramid = 'x';
+    var space = Math.floor(21 / 2)
+    alert(space);
+    for (var i = 1; i <= 21; i++){
         console.log(piramid);
+        piramid +='x';
     }
 }
+task5();
