@@ -6,57 +6,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="wrapper">
-    <header><h1>Практическое задание 4</h1></header>
+<div class="quest_wrap">
+    <header><h1>Практикум. Квест 2.0</h1></header>
     <main>
-        <div class="tasks">
-            <div class="task">
-                0
-                <h3>Практикум. Квест 2.0</h3>
-                Вернемся к игре из четвертого урока — ей нужна история вопросов и ответов. Теперь, когда умеем управлять DOM, можем выводить историю на экран. Реализуем это улучшение.
-                <a href="quest.html" class="answ">Начать игру</a>
+        <div class="quest_game">
+            <div class="bg-img">
+                <img src="img/quest.jpg" alt="quest img">
             </div>
-            <div class="task">
-                1 Создать функцию, генерирующую шахматную доску. Можно использовать любые html-теги. Доска должна быть верно разлинована на черные и белые ячейки.
-                Строки должны нумероваться числами от 1 до 8, столбцы — латинскими буквами A, B, C, D, E, F, G, H.
-
-                <div class="board">
-                    <div id="ches"></div>
-                    <button onclick="newGame()">New GAME ( random colors )</button>
-                </div>
-            </div>
-            <div class="task">
-                2 Сделать генерацию корзины динамической: верстка корзины не должна находиться в HTML-структуре. Там должен быть только div, в который будет вставляться корзина, сгенерированная на базе JS:
-                <ol type="a">
-                    <li>
-                        Пустая корзина должна выводить строку «Корзина пуста»;
-                    </li>
-                    <li>
-                        Наполненная должна выводить «В корзине: n товаров на сумму m рублей».
-                    </li>
-                </ol>
-            </div>
-            <div class="task">
-                3 * Сделать так, чтобы товары в каталоге выводились при помощи JS:
-                <ol type="a">
-                    <li>
-                        Создать массив товаров (сущность Product);
-                    </li>
-                    <li>
-                        При загрузке страницы на базе данного массива генерировать вывод из него. HTML-код должен содержать только div id=”catalog” без вложенного кода. Весь вид каталога генерируется JS.
-                    </li>
-                </ol>
-            </div>
-
+            <div class="stGame" onclick="stGame(0)">Начать игру</div>
+            <div class="exitGame hideBlock" onclick="getAnsw(1111)">Поинуть игру</div>
+            <div class="textAction hideBlock"></div>
+            <div class="action hideBlock"></div>
         </div>
     </main>
     <footer class="transparet">
         &copy; Игорь Дабижа, 2019
     </footer>
 </div>
-<script src="js/lesson4.js"></script>
 <script src="js/5lesson-quest2-0-text.js"></script>
 <script src="js/quest.js"></script>
-<script src="js/chess.js"></script>
 </body>
 </html>
