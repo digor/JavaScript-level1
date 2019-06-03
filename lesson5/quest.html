@@ -11,12 +11,16 @@
     <main>
         <div class="quest_game">
             <div class="bg-img">
-                <img src="img/quest.jpg" alt="quest img">
+                <img id="urlImg" src="img/the_quest.jpg" alt="quest img">
             </div>
+            <div class="userSteps hideBlock"></div>
             <div class="stGame" onclick="stGame(0)">Начать игру</div>
-            <div class="exitGame hideBlock" onclick="getAnsw(1111)">Поинуть игру</div>
             <div class="textAction hideBlock"></div>
-            <div class="action hideBlock"></div>
+            <div class="action hideBlock">
+                <span class="item" id="answ1" onclick="getAnsw(1)">1</span>
+                <span class="item" id="answ2" onclick="getAnsw(2)">2</span>
+                <span class="item" onclick="getAnsw(1111)">Поинуть игру</span>
+            </div>
         </div>
     </main>
     <footer class="transparet">

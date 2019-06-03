@@ -107,14 +107,32 @@ header{
   margin: 20px auto;
   width: 1200px;
   height: 675px;
-  /*border: 1px solid red;*/
+  position: relative;
   .bg-img{
-    position: relative;
+    img {
+      width: 1200px;
+      height: 675px;
+    }
   }
   .exitGame,
   .textAction,
-  .action{
+  .action,
+  .userSteps{
     position: absolute;
+  }
+  .exitGame,
+  .textAction,
+  .action,
+  .userSteps{
+    text-align: left;
+  }
+  .userSteps{
+    color: #fff;
+    background-color: #00000070;
+    top: 20px;
+    left: 20px;
+    width: 250px;
+    padding: 10px;
   }
   .exitGame{
     cursor: pointer;
@@ -124,27 +142,39 @@ header{
   }
   .textAction {
     color: #fff;
-    text-align: center;
     background-color: #00000070;
-    top: 300px;
-    left: 790px;
+    top: 200px;
+    right: 20px;
     width: 400px;
-    height: 200px;
+    padding: 10px;
+    line-height: 20px;
   }
   .action {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     color: #fff;
     text-align: center;
     background-color: #00000070;
-    top: 520px;
-    right: 190px;
-    width: 400px;
+    top: 570px;
+    right: 120px;
+    width: 80%;
     height: 100px;
+    .item {
+      display: block;
+      padding: 5px 20px;
+      cursor: pointer;
+      line-height: 30px;
+      font-weight: 500;
+      background-color: #4e3427;
+      border-radius: 10px;
+    }
   }
   .stGame{
     cursor: pointer;
     position: absolute;
-    top: 300px;
-    left: 600px;
+    top: 580px;
+    left: 500px;
     width: 200px;
     height: 50px;
     border-radius: 20px;

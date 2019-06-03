@@ -1,48 +1,56 @@
-var steps = 0, question;
-var makedMoves = [];
+var steps = 0, question, m = 0;
+//var makedMoves = [];
 
 var elGame = {
     btnStGame: document.querySelector('.stGame'),
-    btnExitGame: document.querySelector('.exitGame'),
     txtAction: document.querySelector('.textAction'),
-    action: document.querySelector('.action')
+    userSteps: document.querySelector('.userSteps'),
+    action: document.querySelector('.action'),
+    answ1: document.querySelector('#answ1'),
+    answ2: document.querySelector('#answ2'),
+    makedMoves: [],
+    imgStep: ['quest_start.jpg','quest-sleep.jpg','quest-walk.jpg','quest-walk.jpg','quest-4.jpg','quest-5.jpg',
+        'quest-lemne.jpg','quest-7.jpg','quest-walk.jpg','quest-sleep.jpg','quest-1.jpg','quest-sezi.jpg'
+        ,'quest-1.jpg','quest-13.jpg','quest-14.jpg','quest-sleep.jpg'],
+    gameOn: function () {
+        elGame.btnStGame.classList.add('hideBlock'),
+        elGame.txtAction.classList.remove('hideBlock'),
+        //elGame.userSteps.classList.remove('hideBlock'),
+        elGame.action.classList.remove('hideBlock')
+    },
+    gameOff: function () {
+        elGame.btnStGame.classList.remove('hideBlock'),
+        elGame.txtAction.classList.add('hideBlock'),
+        elGame.userSteps.classList.add('hideBlock'),
+        elGame.action.classList.add('hideBlock')
+    }
 };
 
 function stGame(n) {
     question = works[n];
 
+
+    document.getElementById("urlImg").src= 'img/' + elGame.imgStep[n];
+
     let st = (steps !== 0) ? 'шаги: ' + steps : '';
 
-    // show hidden elements of game
-    elGame.btnStGame.classList.add('hideBlock');
-    elGame.btnExitGame.classList.remove('hideBlock');
-    elGame.txtAction.classList.remove('hideBlock');
-    elGame.action.classList.remove('hideBlock');
+
+    elGame.gameOn();
 
     elGame.txtAction.innerText = question.text;
+    elGame.answ1.innerText = question.answer[1].slice(4);
+    elGame.answ2.innerText = question.answer[2].slice(4);
 
-    var newDiv = document.createElement('div');
-    newDiv.innerHTML = 'some text';
-    elGame.action.appendChild(selectMoves(n));
-    /*newDiv.innerHTML = 'some text2';
-    elGame.action.insertAdjacentHTML('beforeend', newDiv);
-    newDiv.innerHTML = 'some text3';
-    elGame.action.insertAdjacentHTML('beforeend', newDiv);*/
-
-    let ms = selectMoves(n);
-    alert(ms);
-    action.appendChild(ms);
-
-    //answ = +prompt(question.text + '\n' + selectMoves(n) + '\n ' + st);
-
+    total();
 }
 
 function getAnsw(answ) {
     if (answ === 1111) {
-        total();
+        elGame.gameOff();
+        document.getElementById("urlImg").src='img/the_quest.jpg';
     } else if (answ === 1 || answ === 2) {
         ++steps;
-        makedMoves.push(question.answer[answ]);
+        elGame.makedMoves.push(steps + '. ' + question.answer[answ].slice(4));
         stGame(question.jump[answ]);
     } else {
         alert('Select 1 or 2');
@@ -53,24 +61,16 @@ function getAnsw(answ) {
 function total() {
     let movs = '';
 
-    for (let el in makedMoves) {
-        movs += makedMoves[el];
-    }
-    alert(movs + '\nшаги: ' + steps);
+    for (let el = elGame.makedMoves.length - 10; el < elGame.makedMoves.length; el++ ) {
+        //alert(el);
+            if(el < 0) movs += '';
+            else {
+                elGame.userSteps.classList.remove('hideBlock');
+                movs += elGame.makedMoves[el];
+            }
+        }
+
+    elGame.userSteps.innerText = movs;
 }
 
-function selectMoves(n) {
-    let moves = document.createElement("template");
 
-    let el = document.createElement('div');
-
-    for (let key in question.answer) {
-
-        el.innerText = question.answer[key];
-        moves += el;
-    }
-
-    return moves;
-}
-
-//stGame(0);
